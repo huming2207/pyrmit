@@ -4,16 +4,16 @@ import time
 import json
 
 
-class MyExam:
+class MyMessage:
 
     @staticmethod
-    def get_exam():
+    def get_messages():
 
         ts = int(time.time() * 1000)
         ts_str = str(ts)
         cookie_str = ""
 
-        url = "https://my.rmit.edu.au/service/myexamtimetable?time=" + ts_str
+        url = "https://my.rmit.edu.au/service/announcements?time=" + ts_str
 
         fake_header = {
             "Accept": "application/json, text/plain, */*",
@@ -22,7 +22,7 @@ class MyExam:
             "Connection": "keep-alive",
             "Host": "my.rmit.edu.au",
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36",
-            "Referer": "https://my.rmit.edu.au/portal/myExam-timetable/",
+            "Referer": "https://my.rmit.edu.au/portal/",
         }
 
         cj = browsercookie.chrome()
